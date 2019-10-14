@@ -17,7 +17,7 @@
   node app.js
 ```
 
-打开浏览器输入[localhost:8080](localhost:8080)
+打开浏览器输入[localhost:8080](http://localhost:8080/)
 
 ## 主要目的
 
