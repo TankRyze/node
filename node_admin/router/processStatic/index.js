@@ -2,6 +2,7 @@
 
 const motionless = require('../../config/static.js');
 const relativePath = require('../../config/path.js');
+const router = require('../../config/router');
 const path = require('path');
 const fs = require('fs');
 // 处理静态文件
@@ -18,6 +19,8 @@ function processStatic (req, res) {
   // 访问的是根目录的
   if(url === '/' || url === '') {
     filePath = path.join(__dirname, '../../view/index.html')
+  }else if (url.indexOf('.') === -1 && router.indexOf(url.slice(1)) > -1) {
+    filePath = path.join(__dirname, '../../view' + url + '/index.html')
   }else {
     // 文件路径
     filePath = path.join(__dirname, relativePath[staticKey] + url)
